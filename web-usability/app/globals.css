@@ -1,26 +1,935 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #f9dbbd;
+  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.text {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  width: 90%;
+  background-color: #f9dbbd;
+  border-radius: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.text-recording {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  overflow-y: auto;
+  max-height: 90vh;
+  padding: 30px;
+  background-color: #fca17d;
+  border-radius: 20px;
+  min-width: 400px;
+  max-width: 900px;
+  width: 90%;
+}
+
+.doble-gird {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  /*background-color: #8a7c73;*/ /*i cant lie this color makes me mad*/
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: none;
+  width: fit-content;
+}
+
+button {
+  font-family: Georgia, "Times New Roman", Times, serif; /*feel free to change*/
+  padding: 10px 16px;
+  margin-top: 10px;
+  border: #0d0628 2px;
+  border-radius: 8px;
+  background-color: #9a348e;
+  color: #f9dbbd;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fca17d;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.flashbang-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.home-button {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+}
+
+h1 {
+  color: #0d0628;
+  font-size: 36px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+h2,
+h3 {
+  color: #0d0628;
+  text-align: center;
+  margin: 8px 0;
+}
+
+p {
+  color: #0d0628;
+  font-size: 18px;
+}
+
+#generatePromptBtn {
+  margin-top: 10px;
+}
+
+input {
+  color: black;
+  height: 40px;
+  width: 400px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 30px;
+  margin: 15px;
+  padding: 10px;
+  background-color: #fca17d;
+  border: none;
+  border-radius: 4px;
+}
+
+a:link {
+  color: #0d0628;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #0d0628;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #da627d;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #fca17d;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #9a348e;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #0d0628;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #0d0628;
+  color: #9a348e;
+}
+
+.topnav a {
+  color: #fca17d;
+}
+
+section {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #0d0628;
+  border-radius: 10px;
+  background-color: #9a348e;
+}
+
+section p {
+  color: #fca17d;
+}
+
+section h2 {
+  color: #fca17d;
+}
+
+/* Feedback page */
+
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 15px;
+}
+
+.cards-wrapper section {
+  margin: 20px;
+  padding: 30px;
+  border: 1px solid #0d0628;
+  border-radius: 10px;
+  background-color: #9a348e;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  height: 350px;
+}
+
+.card {
+  background-color: #9a348e;
+  border: 1px solid #0d0628;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fca17d;
+}
+
+.words-header {
+  margin-bottom: 15px;
+}
+
+.words-header h3 {
+  margin: 0 0 10px 0;
+  color: #fca17d;
+}
+
+.word-list {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.word-list h4 {
+  color: #fca17d;
+  margin-bottom: 10px;
+}
+
+.used-word,
+.avoid-word {
+  color: #fca17d;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.sb {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 10px 16px;
+  margin-top: 10px;
+  background-color: #0d0628;
+  color: #9a348e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.sb:hover {
+  background-color: #fca17d;
+  color: #0d0628;
+}
+
+.sb:active {
+  color: #fca17d;
+  background-color: #da627d;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Recording Page Styles */
+#videoContainer {
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  aspect-ratio: 4/3;
+  display: none;
+}
+
+#videoPreview {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scaleX(-1);
+  background-color: #000;
+}
+
+#timerDisplay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#recordingIndicator {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#recordingDot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.3;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+#controlsSection {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#statusMessage {
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+}
+
+#statusMessage.success {
+  background-color: #f9dbbd;
+  color: #0d0628;
+  border: 1px solid #9a348e;
+}
+
+#statusMessage.error {
+  background-color: #f9dbbd;
+  color: #da627d;
+  border: 1px solid #da627d;
+}
+
+#statusMessage.info {
+  background-color: #f9dbbd;
+  color: #9a348e;
+  border: 1px solid #9a348e;
+}
+
+#instructions {
+  background-color: #da627d;
+  /* border: 1px solid #f9dbbd; */
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  color: #f9dbbd;
+}
+
+#instructions h4 {
+  color: #0d0628;
+  margin-top: 0;
+}
+
+#instructions ul {
+  margin-bottom: 0;
+  color: #f9dbbd;
+}
+
+#promptSection {
+  background-color: #da627d;
+  padding: 20px;
+  /* border-left: 4px solid #f9dbbd; */
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+#promptLabel {
+  color: #0d0628;
+  margin-bottom: 10px;
+}
+
+#promptText {
+  font-size: 18px;
+  color: #f9dbbd;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+#audioVisualizerContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+#audioVisualizer {
+  display: flex;
+  gap: 2px;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.audio-bar {
+  width: 3px;
+  min-height: 2px;
+  background-color: #9a348e;
+  border-radius: 2px;
+  flex: 1;
+}
+
+#generatePromptBtn {
+  background-color: #9a348e;
+  color: #f9dbbd;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-top: 10px;
+}
+
+#generatePromptBtn:hover {
+  background-color: #fca17d;
+}
+
+#submittedScreen {
+  padding: 40px 20px;
+  min-height: 300px;
+  display: none;
+  text-align: center;
+}
+
+#submittedScreen h2 {
+  color: #0d0628;
+  font-size: 32px;
+}
+
+#submittedScreen .success-message {
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+#submittedScreen .success-subtext {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #0d0628;
+}
+
+#nextBtn {
+  background-color: #9a348e;
+  color: #0d0628;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: #0d0628 2px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+#nextBtn:hover {
+  background-color: #fca17d;
+}
+
+/* Tablet and smaller (max-width: 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .text {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .text-recording {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: unset;
+    max-width: unset;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  h2,
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 8px 14px;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  input {
+    width: 90%;
+    max-width: 350px;
+    height: 36px;
+    font-size: 16px;
+    margin: 12px;
+    padding: 8px;
+  }
+
+  .doble-gird {
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  section {
+    margin: 12px;
+    padding: 15px;
+  }
+
+  .words {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .words section {
+    flex: 1;
+    min-width: unset;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+
+  .back-button {
+    top: 15px;
+    left: 15px;
+    font-size: 14px;
+  }
+
+  .flashbang-button {
+    top: 15px;
+    right: 15px;
+    font-size: 14px;
+  }
+
+  .home-button {
+    top: 15px;
+    right: 75px;
+    font-size: 14px;
+  }
+
+  #submittedScreen h2 {
+    font-size: 24px;
+  }
+
+  #submittedScreen .success-message {
+    font-size: 16px;
+  }
+
+  #submittedScreen .success-subtext {
+    font-size: 14px;
+  }
+
+  #statusMessage {
+    padding: 12px;
+    margin: 15px 0;
+  }
+
+  #instructions {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  #promptSection {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  #promptText {
+    font-size: 16px;
+  }
+
+  #controlsSection {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  #nextBtn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  #timerDisplay {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .topnav a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .text {
+    padding: 15px;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .text-recording {
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-height: 85vh;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  h2,
+  h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-top: 6px;
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 8px;
+  }
+
+  .doble-gird {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 12px;
+    width: 100%;
+  }
+
+  section {
+    margin: 10px 0;
+    padding: 12px;
+  }
+
+  section p {
+    font-size: 14px;
+  }
+
+  section h2 {
+    font-size: 18px;
+  }
+
+  .words {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .words section {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+  }
+
+  .sb {
+    padding: 8px 12px;
+    margin-top: 8px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .back-button {
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .flashbang-button {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .home-button {
+    top: 10px;
+    right: 65px;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  #submittedScreen {
+    padding: 20px 15px;
+    min-height: 250px;
+  }
+
+  #submittedScreen h2 {
+    font-size: 20px;
+  }
+
+  #submittedScreen .success-message {
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
+  #submittedScreen .success-subtext {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  #statusMessage {
+    padding: 10px;
+    margin: 12px 0;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
+  #instructions {
+    padding: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  #instructions h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  #instructions ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+  }
+
+  #instructions li {
+    margin: 5px 0;
+  }
+
+  #promptSection {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  #promptLabel {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  #promptText {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  #controlsSection {
+    gap: 8px;
+    margin-bottom: 12px;
+    justify-content: center;
+  }
+
+  #generatePromptBtn {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  #nextBtn {
+    padding: 8px 20px;
+    font-size: 13px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #timerDisplay {
+    font-size: 12px;
+    padding: 5px 8px;
+    top: 10px;
+    right: 10px;
+  }
+
+  #recordingIndicator {
+    font-size: 12px;
+    padding: 6px 10px;
+    top: 10px;
+    left: 10px;
+  }
+
+  #recordingDot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .topnav {
+    position: relative;
+  }
+
+  .topnav a {
+    float: none;
+    display: block;
+    padding: 10px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(157, 52, 142, 0.5);
+  }
+
+  .topnav a:hover {
+    background-color: #0d0628;
+  }
+
+  #videoContainer {
+    margin-bottom: 15px;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* Small phone (max-width: 360px) */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  input {
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .text {
+    padding: 12px;
+  }
+
+  section {
+    padding: 10px;
+    margin: 8px 0;
+  }
+
+  .home-button {
+    top: 10px;
+    right: 60px;
+    font-size: 11px;
+    padding: 4px 6px;
+  }
 }
