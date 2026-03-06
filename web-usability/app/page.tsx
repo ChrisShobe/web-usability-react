@@ -46,9 +46,10 @@ export default function Home() {
       </section>
       <br />
       <br />
+      
       <section>
         <h2>
-          Getting Started
+          <b>Getting Started</b>
         </h2>
         <p>
           First, you'll select the words you would like to avoid using when you talk, as well as any you'd like to start using.
@@ -56,7 +57,8 @@ export default function Home() {
           prompt. Once you're done, Talk Back will provide feedback about when and where you used certain words, and give you advice
           on how to improve.
         </p>
-        <p style={{ 'textAlign': 'center', 'color': '#fdc482' }}>
+        <br />
+        <p style={{ 'textAlign': 'center', 'color': '#fca17d' }}>
           <b>
             Ready to Give it a Try?
           </b>
@@ -69,14 +71,15 @@ export default function Home() {
       </section>
       <br />
       <br />
+      
       <section>
         <h2>
-          Extra Help
+          <b>Extra Help</b>
         </h2>
         <p>
-          If you're still confused on how to get started, you can watch our demonstration video 
-          <a style={{ 'color': '#fdc482' }} href="flashbang.html">
-           here
+          If you're still confused on how to get started, you can watch our demonstration video -
+          <a style={{ 'color': '#fdc482' }} href="/recording">
+          here
           </a>
           .
         </p>
